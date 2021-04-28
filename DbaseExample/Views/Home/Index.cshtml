@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center">
+    <h1 class="display-4">Big J's Grocery Emporium</h1>
+    <img class="img-fluid" src="~/Pictures/Cart.png" />
+</div>
+<div class="text-center">
+    @Html.ActionLink("Enter Site", "Index", "Product", null, new { @class = "btn btn-primary btn-lg" })
+</div>

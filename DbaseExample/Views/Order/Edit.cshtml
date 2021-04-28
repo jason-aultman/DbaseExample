@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Order
+
+<h1>Order Details</h1>
+
+<table class="table table-bordered">
+    <thead class="thead-light">
+        <tr>
+            <td scope="col">Order # @Model.ID</td>
+            <td scope="col">Product Name</td>
+            <td scope="col">Product Size</td>
+            <td scope="col">Product Unit</td>
+            <td scope="col">Product Price</td>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach(Product p in Model.Products)
+        {
+    <tr>
+        <td scope="col">@Html.ActionLink("Remove", "DeleteFrom", "Order", new {ID=Model.ID, ProductId=p.ID })</td>
+        <td scope="col">@p.Name</td>
+        <td scope="col">@p.Quantity</td>
+        <td scope="col">@p.Units</td>
+        <td scope="col">$@p.Price</td>
+
+    </tr>
+        }
+    </tbody>
+</table>
+<div>
+    @Html.ActionLink("Add product to order", "AddProduct", "Order", new {ID=Model.ID})
+</div>

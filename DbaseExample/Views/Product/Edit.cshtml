@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Product
+
+@using (Html.BeginForm("Create", "Product"))
+{
+    <div class="form-group">
+        @Html.LabelFor(p => p.Name)
+        @Html.TextBoxFor(p => p.Name, new { @class = "form-control", @name = "Name" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(p => p.Quantity)
+        @Html.TextBoxFor(p => p.Quantity, new { @class = "form-control", @name = "Quantity" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(p => p.Units)
+        @Html.TextBoxFor(p => p.Units, new { @class = "form-control", @name = "Units" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(p => p.Price)
+        @Html.TextBoxFor(p => p.Price, new { @class = "form-control", @name = "Price" })
+    </div>
+    <div>
+        @Html.HiddenFor(p => p.ID)
+    </div>
+    <div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+}
